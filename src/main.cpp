@@ -8,8 +8,10 @@
  ============================================================================
  */
 
+#include <valve.h>
 #include "be.h"
 #include "mbe.h"
+#include "spu.h"
 
 int main(void) {
 
@@ -17,12 +19,20 @@ int main(void) {
 
 	merlin::limid gm;
 	gm.read("/home/radu/git/limid/examples/car.uai");
-	merlin::be s(gm);
-	s.run();
+	merlin::be s1(gm);
+	s1.run();
+	merlin::valve s2(gm);
+	s2.run();
 
-	merlin::mbe m(gm);
-	m.run();
-	m.run2();
+//	merlin::mbe m(gm);
+//	m.run();
+//	m.run2();
+
+//	merlin::limid gm;
+//	gm.read("/home/radu/git/limid/examples/chain.uai");
+//	merlin::spu s(gm);
+//	s.run();
+//	s.brute_force();
 
 	return 0;
 }
